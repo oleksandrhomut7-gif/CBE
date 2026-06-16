@@ -1,0 +1,24 @@
+[project]
+name = "neo-todo"
+version = "0.1.0"
+description = "Neo-ToDo: The Zen-CBE Productivity Board"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=neo_todo --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["neo_todo"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
